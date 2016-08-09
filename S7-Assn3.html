@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hide Rows</title>
+		<meta chartset="UTF-8">
+		<style type="text/css">
+			input{
+				padding: 5px;
+				outline: none;
+				width:200px;
+			}
+			p{
+				font-size: 14px;
+				color: red;
+				margin-left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="get" id="myForm">
+			<label for="num" >Enter Number : </label>
+			<input type="text" name="num" id="num">
+			<p></p>
+		</form>
+
+		<script type="text/javascript">
+			
+			var numEntered = document.getElementById("num");
+				numEntered.addEventListener("change", function(){
+				if(isNaN(numEntered.value)){
+					numEntered.style.backgroundColor = "red";
+					document.getElementsByTagName("p")[0].innerText = "Please enter a number!!";
+				}
+				else{
+					numEntered.style.backgroundColor ="white";
+					document.getElementsByTagName("p")[0].innerText = "";
+				}
+			});
+			
+		</script>
+	</body>
+</html>
